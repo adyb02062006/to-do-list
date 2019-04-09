@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тег UL</title>
+</head>
+<body>
+<ul id="or">
+<li id="12">
+    <input type="text" >
+  <button onclick="remove('12')">-</button>
+</li>
+</ul>
+<button onclick="add()">+</button>
+</body>
+<script>
+    i=0
+    function add() {
+        i++
+        list=document.getElementById("or")
+        child = document.createElement('div')
+        child.id=i
+        child.innerHTML='<li>\n' +
+            '    <input type="text" >\n' +
+            '  <button onclick="remove('+i+')">-</button>\n' +
+            '</li>'
+        list.appendChild(child)
+    }
+    function remove(element) {
+        document.getElementById("or").removeChild(document.getElementById(element))
+    }
+</script>
+</html>
